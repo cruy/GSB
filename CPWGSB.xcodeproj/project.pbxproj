@@ -15,6 +15,10 @@
 		DFA42F061D568301003E3EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA42F041D568301003E3EC2 /* LaunchScreen.storyboard */; };
 		DFA42F111D568301003E3EC2 /* CPWGSBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42F101D568301003E3EC2 /* CPWGSBTests.swift */; };
 		DFA42F1C1D568301003E3EC2 /* CPWGSBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42F1B1D568301003E3EC2 /* CPWGSBUITests.swift */; };
+		DFA42F2A1D5683F3003E3EC2 /* GSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42F291D5683F3003E3EC2 /* GSB.swift */; };
+		DFA42F2C1D5736C6003E3EC2 /* GSBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42F2B1D5736C6003E3EC2 /* GSBTableViewCell.swift */; };
+		DFA42F2F1D580026003E3EC2 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42F2E1D580026003E3EC2 /* ResultViewController.swift */; };
+		DFA42F311D58AF95003E3EC2 /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA42F301D58AF95003E3EC2 /* firework.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		DFA42F171D568301003E3EC2 /* CPWGSBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPWGSBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA42F1B1D568301003E3EC2 /* CPWGSBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPWGSBUITests.swift; sourceTree = "<group>"; };
 		DFA42F1D1D568301003E3EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFA42F291D5683F3003E3EC2 /* GSB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSB.swift; sourceTree = "<group>"; };
+		DFA42F2B1D5736C6003E3EC2 /* GSBTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSBTableViewCell.swift; sourceTree = "<group>"; };
+		DFA42F2E1D580026003E3EC2 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		DFA42F301D58AF95003E3EC2 /* firework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = firework.png; path = ../firework.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,15 @@
 			children = (
 				DFA42EF81D568300003E3EC2 /* AppDelegate.swift */,
 				DFA42EFA1D568301003E3EC2 /* ViewController.swift */,
+				DFA42F2E1D580026003E3EC2 /* ResultViewController.swift */,
+				DFA42F2B1D5736C6003E3EC2 /* GSBTableViewCell.swift */,
+				DFA42F291D5683F3003E3EC2 /* GSB.swift */,
 				DFA42EFC1D568301003E3EC2 /* Main.storyboard */,
 				DFA42F021D568301003E3EC2 /* Assets.xcassets */,
 				DFA42F041D568301003E3EC2 /* LaunchScreen.storyboard */,
 				DFA42F071D568301003E3EC2 /* Info.plist */,
 				DFA42EFF1D568301003E3EC2 /* CPWGSB.xcdatamodeld */,
+				DFA42F301D58AF95003E3EC2 /* firework.png */,
 			);
 			path = CPWGSB;
 			sourceTree = "<group>";
@@ -232,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFA42F311D58AF95003E3EC2 /* firework.png in Resources */,
 				DFA42F061D568301003E3EC2 /* LaunchScreen.storyboard in Resources */,
 				DFA42F031D568301003E3EC2 /* Assets.xcassets in Resources */,
 				DFA42EFE1D568301003E3EC2 /* Main.storyboard in Resources */,
@@ -259,9 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFA42F2A1D5683F3003E3EC2 /* GSB.swift in Sources */,
 				DFA42EFB1D568301003E3EC2 /* ViewController.swift in Sources */,
+				DFA42F2C1D5736C6003E3EC2 /* GSBTableViewCell.swift in Sources */,
 				DFA42F011D568301003E3EC2 /* CPWGSB.xcdatamodeld in Sources */,
 				DFA42EF91D568300003E3EC2 /* AppDelegate.swift in Sources */,
+				DFA42F2F1D580026003E3EC2 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +504,7 @@
 				DFA42F221D568301003E3EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFA42F231D568301003E3EC2 /* Build configuration list for PBXNativeTarget "CPWGSBTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +513,7 @@
 				DFA42F251D568301003E3EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFA42F261D568301003E3EC2 /* Build configuration list for PBXNativeTarget "CPWGSBUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +522,7 @@
 				DFA42F281D568301003E3EC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
