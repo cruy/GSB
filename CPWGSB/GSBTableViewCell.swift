@@ -14,14 +14,14 @@ class GSBTableViewCell: UITableViewCell {
     @IBOutlet weak var quantityCounterLabel: UILabel!
     @IBOutlet weak var minusOutlet: UIButton!
     @IBOutlet weak var plusOutlet: UIButton!
-    let buttonMin = 0
-    let buttonMax = 20
+    let quantityMin = 0
+    let quantityMax = 100
     
     @IBAction func minusAction(sender: UIButton) {
         let buttonRow = sender.tag
         let newValue = bands[buttonRow].quantity - 1
         
-        if newValue >= buttonMin {
+        if newValue >= quantityMin {
         quantityCounterLabel.text = "\(newValue)"
         bands[buttonRow].quantity = newValue
             
@@ -34,7 +34,7 @@ class GSBTableViewCell: UITableViewCell {
         let buttonRow = sender.tag
         let newValue = bands[buttonRow].quantity + 1
         
-        if newValue <= buttonMax {
+        if newValue <= quantityMax {
         quantityCounterLabel.text = "\(newValue)"
         bands[buttonRow].quantity = newValue
         
