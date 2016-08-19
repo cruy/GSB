@@ -162,8 +162,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-bN-CtJ">
+                                        <rect key="frame" x="166" y="151" width="268" height="69"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firework" translatesAutoresizingMaskIntoConstraints="NO" id="p1X-Hz-Y6C">
-                                        <rect key="frame" x="275" y="46" width="50" height="50"/>
+                                        <rect key="frame" x="275" y="40" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Gna-v4-5Jg"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="KhF-LI-b5F"/>
@@ -171,20 +177,14 @@
                                             <constraint firstAttribute="width" constant="50" id="eh7-ob-qhg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-bN-CtJ">
-                                        <rect key="frame" x="166" y="151" width="268" height="69"/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="50"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LIE-ct-m2W" firstAttribute="centerY" secondItem="WBd-Ex-jhi" secondAttribute="centerY" constant="-1" id="0Xn-IV-I7U"/>
                                     <constraint firstItem="p1X-Hz-Y6C" firstAttribute="centerX" secondItem="WBd-Ex-jhi" secondAttribute="centerX" id="2KD-4p-YGW"/>
                                     <constraint firstItem="kW0-bN-CtJ" firstAttribute="top" secondItem="LIE-ct-m2W" secondAttribute="bottom" constant="8" symbolic="YES" id="RGg-YJ-DOo"/>
                                     <constraint firstItem="kW0-bN-CtJ" firstAttribute="leading" secondItem="WBd-Ex-jhi" secondAttribute="leading" constant="166" id="Utr-ko-D9g"/>
-                                    <constraint firstItem="p1X-Hz-Y6C" firstAttribute="top" secondItem="WBd-Ex-jhi" secondAttribute="top" constant="46" id="aTy-4J-Jum"/>
-                                    <constraint firstItem="LIE-ct-m2W" firstAttribute="top" secondItem="p1X-Hz-Y6C" secondAttribute="bottom" constant="8" symbolic="YES" id="g4J-ie-vJW"/>
+                                    <constraint firstItem="p1X-Hz-Y6C" firstAttribute="top" secondItem="WBd-Ex-jhi" secondAttribute="top" constant="40" id="aTy-4J-Jum"/>
+                                    <constraint firstItem="LIE-ct-m2W" firstAttribute="top" secondItem="p1X-Hz-Y6C" secondAttribute="bottom" constant="14" id="g4J-ie-vJW"/>
                                     <constraint firstItem="LIE-ct-m2W" firstAttribute="centerX" secondItem="kW0-bN-CtJ" secondAttribute="centerX" id="oaC-Ed-BkH"/>
                                     <constraint firstItem="p1X-Hz-Y6C" firstAttribute="centerX" secondItem="LIE-ct-m2W" secondAttribute="centerX" id="sEq-9h-Dl5"/>
                                 </constraints>
