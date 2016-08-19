@@ -18,6 +18,7 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         tableView.separatorStyle = .None
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
 

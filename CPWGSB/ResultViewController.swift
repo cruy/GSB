@@ -19,9 +19,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         let twoDecimals = String(format: "%.2f", result)
         resultOutlet.text = "£\(twoDecimals)"
-            
-        
-        
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {

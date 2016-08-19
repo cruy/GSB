@@ -36,7 +36,7 @@ let bands: [GSB] = [
     GSB(band: "F", reward: 4.50, colorHex: "4D2F91", fontColorHex: "FEFFFF"),
     GSB(band: "G", reward: 6.00, colorHex: "B32387", fontColorHex: "FEFFFF"),
     GSB(band: "X", reward: 7.00, colorHex: "FEFFFF", fontColorHex: "00244D"),
-    GSB(band: "XL", reward: 10.00, colorHex: "00244D", fontColorHex: "FEFFFF")
+    GSB(band: "XL", reward: 10.00, colorHex: "000000", fontColorHex: "FEFFFF")
 ]
 
 
