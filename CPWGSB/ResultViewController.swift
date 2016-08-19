@@ -11,15 +11,30 @@ import UIKit
 class ResultViewController: UIViewController {
 
     @IBOutlet weak var resultOutlet: UILabel!
-    
+    @IBOutlet weak var shareButtonImageView: UIImageView!
     var result: Double = 0.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let twoDecimals = String(format: "%.2f", result)
         resultOutlet.text = "£\(twoDecimals)"
+        
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ResultViewController.shareTapped(_:)))
+        shareButtonImageView.userInteractionEnabled = true
+        shareButtonImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+    }
+    
+    func shareTapped(object: AnyObject) {
+        // Your action
+        let sharedText = "My GSB reward today is \(resultOutlet.text!). Calculated it with CPBGSB."
+        let activityViewController = UIActivityViewController(activityItems: [sharedText], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
     }
 
     override func didReceiveMemoryWarning() {
