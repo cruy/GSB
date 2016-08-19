@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
+    var helperMethods = HelperMethods()
     var totalGSB: Double = 0
     
 
@@ -39,17 +40,14 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! GSBTableViewCell
         
         cell.selectionStyle = .None
-        
         cell.bandLabel.text = "Band \(bands[indexPath.row].band)"
-        cell.bandLabel.textColor = colorWithHexString(bands[indexPath.row].fontColorHex)
+        cell.bandLabel.textColor = helperMethods.colorWithHexString(bands[indexPath.row].fontColorHex)
         cell.quantityCounterLabel.text = "\(bands[indexPath.row].quantity)"
-        cell.quantityCounterLabel.textColor = colorWithHexString(bands[indexPath.row].fontColorHex)
+        cell.quantityCounterLabel.textColor = helperMethods.colorWithHexString(bands[indexPath.row].fontColorHex)
         cell.minusOutlet.tag = indexPath.row
         cell.plusOutlet.tag = indexPath.row
-        cell.backgroundColor = colorWithHexString(bands[indexPath.row].colorHex)
+        cell.backgroundColor = helperMethods.colorWithHexString(bands[indexPath.row].colorHex)
         
-        
-
         return cell
     }
     
@@ -57,7 +55,6 @@ class ViewController: UITableViewController {
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
         }
-        
         self.tableView.reloadData()
     }
     
@@ -67,43 +64,19 @@ class ViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "resultSegue" {
             
-            var subTotalGSB: Double = 0
-            
+            var totalGSB: Double = 0
             for index in 0...bands.count-1 {
                 let tempGSB = (Double(bands[index].quantity) * bands[index].reward)
-                subTotalGSB += tempGSB
+                totalGSB += tempGSB
             }
             
             let destinationVC = segue.destinationViewController as! ResultViewController
-            destinationVC.result = subTotalGSB
+            destinationVC.result = totalGSB
             
         }
     }
     
-    func colorWithHexString (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = (cString as NSString).substringFromIndex(1)
-        }
-        
-        if (cString.characters.count != 6) {
-            return UIColor.grayColor()
-        }
-        
-        let rString = (cString as NSString).substringToIndex(2)
-        let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
-        let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
-        
-        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
-        
-        
-        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
-    }
-
+    
 
 }
 

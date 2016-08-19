@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF11F14E1D67405A00BA2616 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11F14D1D67405A00BA2616 /* HelperMethods.swift */; };
 		DFA42EF91D568300003E3EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42EF81D568300003E3EC2 /* AppDelegate.swift */; };
 		DFA42EFB1D568301003E3EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42EFA1D568301003E3EC2 /* ViewController.swift */; };
 		DFA42EFE1D568301003E3EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA42EFC1D568301003E3EC2 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF11F14D1D67405A00BA2616 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		DFA42EF51D568300003E3EC2 /* CPWGSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPWGSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA42EF81D568300003E3EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFA42EFA1D568301003E3EC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF11F14C1D67402700BA2616 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFA42F291D5683F3003E3EC2 /* GSB.swift */,
+				DF11F14D1D67405A00BA2616 /* HelperMethods.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		DFA42EEC1D568300003E3EC2 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +122,7 @@
 				DFA42EFA1D568301003E3EC2 /* ViewController.swift */,
 				DFA42F2E1D580026003E3EC2 /* ResultViewController.swift */,
 				DFA42F2B1D5736C6003E3EC2 /* GSBTableViewCell.swift */,
-				DFA42F291D5683F3003E3EC2 /* GSB.swift */,
+				DF11F14C1D67402700BA2616 /* Model */,
 				DFA42EFC1D568301003E3EC2 /* Main.storyboard */,
 				DFA42F021D568301003E3EC2 /* Assets.xcassets */,
 				DFA42F041D568301003E3EC2 /* LaunchScreen.storyboard */,
@@ -276,6 +287,7 @@
 				DFA42F2A1D5683F3003E3EC2 /* GSB.swift in Sources */,
 				DFA42EFB1D568301003E3EC2 /* ViewController.swift in Sources */,
 				DFA42F2C1D5736C6003E3EC2 /* GSBTableViewCell.swift in Sources */,
+				DF11F14E1D67405A00BA2616 /* HelperMethods.swift in Sources */,
 				DFA42F011D568301003E3EC2 /* CPWGSB.xcdatamodeld in Sources */,
 				DFA42EF91D568300003E3EC2 /* AppDelegate.swift in Sources */,
 				DFA42F2F1D580026003E3EC2 /* ResultViewController.swift in Sources */,
