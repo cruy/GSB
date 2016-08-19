@@ -31,10 +31,14 @@ class ResultViewController: UIViewController {
     }
     
     func shareTapped(object: AnyObject) {
-        // Your action
-        let sharedText = "My GSB reward today is \(resultOutlet.text!). Calculated it with CPBGSB."
-        let activityViewController = UIActivityViewController(activityItems: [sharedText], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: {})
+                
+        let bounds = UIScreen.mainScreen().bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
