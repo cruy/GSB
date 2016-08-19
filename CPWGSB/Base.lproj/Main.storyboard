@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,17 +26,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYD-Bd-vkn">
-                                            <rect key="frame" x="496" y="16" width="42" height="38.5"/>
+                                            <rect key="frame" x="496" y="14.5" width="42" height="39"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="kUU-aX-p1O"/>
+                                                <constraint firstAttribute="width" constant="42" id="uTF-h9-CyH"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eji-En-A07">
-                                            <rect key="frame" x="458" y="8" width="30" height="53"/>
-                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="30"/>
+                                            <rect key="frame" x="448" y="3" width="40" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="gqo-wQ-Sqi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="35"/>
                                             <state key="normal" title="–"/>
                                             <connections>
                                                 <action selector="quantityAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="2Pe-y8-1Lx"/>
@@ -47,8 +52,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-3u-Umj">
-                                            <rect key="frame" x="546" y="8" width="30" height="53"/>
-                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="30"/>
+                                            <rect key="frame" x="546" y="4.5" width="40" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="dIY-bY-sdU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="35"/>
                                             <state key="normal" title="+"/>
                                             <connections>
                                                 <action selector="quantityAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="jsW-f4-UfA"/>
@@ -59,15 +67,15 @@
                                         </stepper>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RYD-Bd-vkn" firstAttribute="top" secondItem="zz3-3u-Umj" secondAttribute="top" constant="8" id="1ln-UO-tII"/>
-                                        <constraint firstAttribute="trailing" secondItem="RYD-Bd-vkn" secondAttribute="trailing" constant="62" id="77R-7D-tWC"/>
-                                        <constraint firstItem="RYD-Bd-vkn" firstAttribute="baseline" secondItem="eji-En-A07" secondAttribute="baseline" id="D5l-17-4vd"/>
-                                        <constraint firstItem="zz3-3u-Umj" firstAttribute="leading" secondItem="RYD-Bd-vkn" secondAttribute="trailing" constant="8" symbolic="YES" id="Lg1-SI-IMu"/>
-                                        <constraint firstItem="jLq-CU-hhE" firstAttribute="leading" secondItem="Vhh-8m-jO4" secondAttribute="leadingMargin" constant="6" id="Mhw-T4-UUo"/>
-                                        <constraint firstItem="RYD-Bd-vkn" firstAttribute="centerY" secondItem="Vhh-8m-jO4" secondAttribute="centerY" constant="0.5" id="TSn-Lf-wZU"/>
-                                        <constraint firstItem="jLq-CU-hhE" firstAttribute="centerY" secondItem="zz3-3u-Umj" secondAttribute="centerY" constant="-0.5" id="ZMo-Fz-f1m"/>
+                                        <constraint firstItem="zz3-3u-Umj" firstAttribute="leading" secondItem="RYD-Bd-vkn" secondAttribute="trailing" constant="8" symbolic="YES" id="98S-EJ-RO2"/>
+                                        <constraint firstItem="RYD-Bd-vkn" firstAttribute="leading" secondItem="eji-En-A07" secondAttribute="trailing" constant="8" symbolic="YES" id="Cbn-bF-EjA"/>
+                                        <constraint firstItem="eji-En-A07" firstAttribute="baseline" secondItem="jLq-CU-hhE" secondAttribute="firstBaseline" constant="1" id="GQQ-lH-eR7"/>
+                                        <constraint firstItem="zz3-3u-Umj" firstAttribute="trailing" secondItem="Vhh-8m-jO4" secondAttribute="trailingMargin" constant="-6" id="Hmw-Ho-tED"/>
+                                        <constraint firstItem="eji-En-A07" firstAttribute="centerY" secondItem="RYD-Bd-vkn" secondAttribute="centerY" constant="-1" id="Ilc-9u-CVf"/>
+                                        <constraint firstItem="jLq-CU-hhE" firstAttribute="centerY" secondItem="zz3-3u-Umj" secondAttribute="centerY" id="Kvv-je-I82"/>
                                         <constraint firstItem="jLq-CU-hhE" firstAttribute="centerY" secondItem="TbR-4P-6f1" secondAttribute="centerY" id="eUY-PG-ju4"/>
-                                        <constraint firstItem="RYD-Bd-vkn" firstAttribute="leading" secondItem="eji-En-A07" secondAttribute="trailing" constant="8" symbolic="YES" id="wrR-dT-YC3"/>
+                                        <constraint firstItem="jLq-CU-hhE" firstAttribute="centerY" secondItem="Vhh-8m-jO4" secondAttribute="centerY" id="evR-NP-dtA"/>
+                                        <constraint firstItem="jLq-CU-hhE" firstAttribute="leading" secondItem="Vhh-8m-jO4" secondAttribute="leadingMargin" constant="6" id="ewy-ga-DeS"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
