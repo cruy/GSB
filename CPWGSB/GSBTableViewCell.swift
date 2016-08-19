@@ -18,9 +18,9 @@ class GSBTableViewCell: UITableViewCell {
     let quantityMax = 100
     var timer: NSTimer!
     
-    @IBAction func quantityAction(sender: UIButton) {
-        let buttonRow = sender.tag
-        let buttonSender = sender
+    @IBAction func quantityAction(sender: AnyObject) {
+        let button = sender as! UIButton
+        let buttonRow = button.tag
         
         func singleTap() {
             if sender.currentTitle == "+" {
