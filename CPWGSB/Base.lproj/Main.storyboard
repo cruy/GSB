@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resultsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ASn-Wq-uhm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resultsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ASn-Wq-uhm">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ASn-Wq-uhm" secondAttribute="height" multiplier="15:8" id="7vD-lA-ru8"/>
@@ -189,6 +189,13 @@
                                     <constraint firstItem="p1X-Hz-Y6C" firstAttribute="centerX" secondItem="LIE-ct-m2W" secondAttribute="centerX" id="sEq-9h-Dl5"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareButton" translatesAutoresizingMaskIntoConstraints="NO" id="yOn-7c-cKz">
+                                <rect key="frame" x="10" y="502" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="bdi-xF-HvL"/>
+                                    <constraint firstAttribute="height" constant="44" id="qA4-2M-ZFM"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-g4-cko">
                                 <rect key="frame" x="534" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -202,6 +209,8 @@
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="leading" secondItem="SqT-O8-PA4" secondAttribute="leading" id="PKT-jM-Q2w"/>
                             <constraint firstItem="WBd-Ex-jhi" firstAttribute="centerY" secondItem="SqT-O8-PA4" secondAttribute="centerY" id="Rku-5Z-tyS"/>
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="top" secondItem="eXB-bS-a7U" secondAttribute="bottom" id="ssO-u5-Omy"/>
+                            <constraint firstItem="rbi-eA-smI" firstAttribute="top" secondItem="yOn-7c-cKz" secondAttribute="bottom" constant="10" id="wNb-rv-LAa"/>
+                            <constraint firstItem="yOn-7c-cKz" firstAttribute="leading" secondItem="SqT-O8-PA4" secondAttribute="leading" constant="10" id="xIB-1n-sPg"/>
                             <constraint firstItem="WBd-Ex-jhi" firstAttribute="centerX" secondItem="SqT-O8-PA4" secondAttribute="centerX" id="ybX-v7-Ffv"/>
                         </constraints>
                         <variation key="default">
@@ -224,7 +233,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8xf-Yd-2R4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9h-ob-4fp">
+                    <navigationBar key="navigationBar" alpha="0.75" contentMode="scaleToFill" id="n9h-ob-4fp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0039215686269999999" green="0.1019607843" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,5 +254,6 @@
     <resources>
         <image name="firework" width="64" height="64"/>
         <image name="resultsBackground" width="2000" height="2000"/>
+        <image name="shareButton" width="396" height="396"/>
     </resources>
 </document>
