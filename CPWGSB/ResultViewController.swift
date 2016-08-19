@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var resultBackgroundImageOutlet: UIImageView!
     @IBOutlet weak var resultOutlet: UILabel!
     @IBOutlet weak var shareButtonImageView: UIImageView!
     var result: Double = 0.0
@@ -23,6 +24,15 @@ class ResultViewController: UIViewController {
         
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         
+        
+//        let rotation = CABasicAnimation(keyPath: "transform.rotation")
+//        rotation.fromValue = 0
+//        rotation.toValue = 2 * M_PI
+//        rotation.duration = 10
+//        rotation.repeatCount = Float.infinity
+//        resultBackgroundImageOutlet.layer.addAnimation(rotation, forKey: "Spin")
+
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ResultViewController.shareTapped(_:)))
         shareButtonImageView.userInteractionEnabled = true
         shareButtonImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -31,7 +41,7 @@ class ResultViewController: UIViewController {
     }
     
     func shareTapped(object: AnyObject) {
-                
+        
         let bounds = UIScreen.mainScreen().bounds
         UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
         self.view.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
