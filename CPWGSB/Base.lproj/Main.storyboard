@@ -37,7 +37,7 @@
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="30"/>
                                             <state key="normal" title="–"/>
                                             <connections>
-                                                <action selector="minusAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="zUK-4s-Tf1"/>
+                                                <action selector="quantityAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="2Pe-y8-1Lx"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Band A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLq-CU-hhE">
@@ -51,7 +51,7 @@
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="30"/>
                                             <state key="normal" title="+"/>
                                             <connections>
-                                                <action selector="plusAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="YOA-tS-O3s"/>
+                                                <action selector="quantityAction:" destination="xB3-8I-jNw" eventType="touchUpInside" id="jsW-f4-UfA"/>
                                             </connections>
                                         </button>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-4P-6f1">
