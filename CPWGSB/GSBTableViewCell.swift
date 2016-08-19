@@ -16,24 +16,34 @@ class GSBTableViewCell: UITableViewCell {
     @IBOutlet weak var plusOutlet: UIButton!
     let quantityMin = 0
     let quantityMax = 100
+    var timer: NSTimer!
     
     @IBAction func quantityAction(sender: UIButton) {
         let buttonRow = sender.tag
-        if sender.currentTitle == "+" {
-            let newValue = bands[buttonRow].quantity + 1
-            if newValue <= quantityMax {
-                quantityCounterLabel.text = "\(newValue)"
-                bands[buttonRow].quantity = newValue
+        let buttonSender = sender
+        
+        func singleTap() {
+            if sender.currentTitle == "+" {
+                let newValue = bands[buttonRow].quantity + 1
+                if newValue <= quantityMax {
+                    quantityCounterLabel.text = "\(newValue)"
+                    bands[buttonRow].quantity = newValue
+                }
+            } else {
+                let newValue = bands[buttonRow].quantity - 1
+                if newValue >= quantityMin {
+                    quantityCounterLabel.text = "\(newValue)"
+                    bands[buttonRow].quantity = newValue
+                }
             }
-        } else {
-            let newValue = bands[buttonRow].quantity - 1
-            if newValue >= quantityMin {
-                quantityCounterLabel.text = "\(newValue)"
-                bands[buttonRow].quantity = newValue
-            }
+            ViewController().tableView.reloadData()
         }
-        ViewController().tableView.reloadData()
+        
+        singleTap()
+        
     }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,5 +56,7 @@ class GSBTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+   
 
 }
