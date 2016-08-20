@@ -13,7 +13,10 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultBackgroundImageOutlet: UIImageView!
     @IBOutlet weak var resultOutlet: UILabel!
     @IBOutlet weak var shareButtonImageView: UIImageView!
+    @IBOutlet weak var closeButtonImageView: UIImageView!
+    
     var result: Double = 0.0
+    
     
     
     override func viewDidLoad() {
@@ -22,20 +25,19 @@ class ResultViewController: UIViewController {
         let twoDecimals = String(format: "%.2f", result)
         resultOutlet.text = "£\(twoDecimals)"
         
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+   //     self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipedDown(_:)))
+        swipeRecognizer.direction = .Down
+        self.view.addGestureRecognizer(swipeRecognizer)
         
-        
-//        let rotation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotation.fromValue = 0
-//        rotation.toValue = 2 * M_PI
-//        rotation.duration = 10
-//        rotation.repeatCount = Float.infinity
-//        resultBackgroundImageOutlet.layer.addAnimation(rotation, forKey: "Spin")
-
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ResultViewController.shareTapped(_:)))
         shareButtonImageView.userInteractionEnabled = true
         shareButtonImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let closeButtonTapReccognizer = UITapGestureRecognizer(target:self, action:#selector(swipedDown(_:)))
+        closeButtonImageView.userInteractionEnabled = true
+        closeButtonImageView.addGestureRecognizer(closeButtonTapReccognizer)
         
         
     }
@@ -49,6 +51,10 @@ class ResultViewController: UIViewController {
         UIGraphicsEndImageContext()
         let activityViewController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
         self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    func swipedDown(gesture: UIGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -117,7 +117,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="calculateAction:" destination="0Fd-TO-rrM" id="byK-bz-ctq"/>
-                                <segue destination="o7N-WW-WAp" kind="showDetail" identifier="resultSegue" id="FW0-k1-HWP"/>
+                                <segue destination="o7N-WW-WAp" kind="popoverPresentation" identifier="resultSegue" popoverAnchorBarButtonItem="HJK-we-Fop" id="FW0-k1-HWP">
+                                    <popoverArrowDirection key="popoverArrowDirection" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,6 +181,14 @@
                                     <constraint firstAttribute="height" constant="44" id="goy-2r-96w"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeButton" translatesAutoresizingMaskIntoConstraints="NO" id="IAf-QQ-jmb">
+                                <rect key="frame" x="10" y="30" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="KTO-Zo-a0X"/>
+                                    <constraint firstAttribute="width" secondItem="IAf-QQ-jmb" secondAttribute="height" multiplier="1:1" id="Nw6-0t-EmW"/>
+                                    <constraint firstAttribute="height" constant="44" id="kxO-lw-P75"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-g4-cko">
                                 <rect key="frame" x="534" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -198,8 +208,10 @@
                             <constraint firstItem="rbi-eA-smI" firstAttribute="top" secondItem="yOn-7c-cKz" secondAttribute="bottom" constant="10" id="UA5-25-2xt"/>
                             <constraint firstItem="kW0-bN-CtJ" firstAttribute="top" secondItem="LIE-ct-m2W" secondAttribute="bottom" constant="8" id="VsC-n4-A9b"/>
                             <constraint firstItem="rbi-eA-smI" firstAttribute="top" secondItem="ASn-Wq-uhm" secondAttribute="bottom" id="Y8b-uC-zF4"/>
+                            <constraint firstItem="IAf-QQ-jmb" firstAttribute="top" secondItem="eXB-bS-a7U" secondAttribute="bottom" constant="10" id="fNs-9V-Ynb"/>
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="leading" secondItem="SqT-O8-PA4" secondAttribute="leading" id="idz-YA-cq9"/>
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="leading" secondItem="SqT-O8-PA4" secondAttribute="leading" id="t0p-Np-akj"/>
+                            <constraint firstItem="IAf-QQ-jmb" firstAttribute="leading" secondItem="SqT-O8-PA4" secondAttribute="leading" constant="10" id="uY2-CT-Zu7"/>
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="centerY" secondItem="SqT-O8-PA4" secondAttribute="centerY" id="vSz-nd-7aU"/>
                             <constraint firstAttribute="trailing" secondItem="ASn-Wq-uhm" secondAttribute="trailing" id="wTg-s7-Lgp"/>
                             <constraint firstItem="ASn-Wq-uhm" firstAttribute="top" secondItem="eXB-bS-a7U" secondAttribute="bottom" id="xRT-zA-LSV"/>
@@ -225,6 +237,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="closeButtonImageView" destination="IAf-QQ-jmb" id="QTE-Ke-fYv"/>
                         <outlet property="resultBackgroundImageOutlet" destination="ASn-Wq-uhm" id="pwH-GZ-NPs"/>
                         <outlet property="resultOutlet" destination="kW0-bN-CtJ" id="bJm-9Y-hy6"/>
                         <outlet property="shareButtonImageView" destination="yOn-7c-cKz" id="8TE-G6-ayw"/>
@@ -258,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeButton" width="393" height="393"/>
         <image name="resultsBackground" width="2000" height="2000"/>
         <image name="shareButton" width="396" height="396"/>
     </resources>
