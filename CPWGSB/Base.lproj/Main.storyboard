@@ -163,9 +163,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£1.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-bN-CtJ">
-                                <rect key="frame" x="184" y="252" width="231" height="96"/>
+                                <rect key="frame" x="149.5" y="252" width="300" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="231" id="Cfm-w2-zfd"/>
+                                    <constraint firstAttribute="width" constant="300" id="Cfm-w2-zfd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

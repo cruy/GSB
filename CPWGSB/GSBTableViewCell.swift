@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class GSBTableViewCell: UITableViewCell {
     
@@ -16,7 +17,8 @@ class GSBTableViewCell: UITableViewCell {
     @IBOutlet weak var plusOutlet: UIButton!
     let quantityMin = 0
     let quantityMax = 100
-    var timer: NSTimer!
+    let helperMethods = HelperMethods()
+    
     
     @IBAction func quantityAction(sender: AnyObject) {
         let button = sender as! UIButton
@@ -37,6 +39,7 @@ class GSBTableViewCell: UITableViewCell {
                 }
             }
             ViewController().tableView.reloadData()
+            helperMethods.popAnimateProperty(quantityCounterLabel)
         }
         
         singleTap()

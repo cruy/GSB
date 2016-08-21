@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import pop
 
 class HelperMethods {
     
@@ -34,6 +35,13 @@ class HelperMethods {
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
-
+    
+    func popAnimateProperty(property: AnyObject){
+        let springAnimation = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+        springAnimation.toValue = NSValue(CGPoint: CGPointMake(0.9, 0.9))
+        springAnimation.velocity = NSValue(CGPoint: CGPointMake(20, 20))
+        springAnimation.springBounciness = 10.0
+        property.pop_addAnimation(springAnimation, forKey: "springAnimation")
+    }
     
 }
