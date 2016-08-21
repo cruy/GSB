@@ -117,9 +117,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="calculateAction:" destination="0Fd-TO-rrM" id="byK-bz-ctq"/>
-                                <segue destination="o7N-WW-WAp" kind="popoverPresentation" identifier="resultSegue" popoverAnchorBarButtonItem="HJK-we-Fop" id="FW0-k1-HWP">
-                                    <popoverArrowDirection key="popoverArrowDirection" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="o7N-WW-WAp" kind="presentation" identifier="resultSegue" id="FW0-k1-HWP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

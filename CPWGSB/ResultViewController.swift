@@ -39,6 +39,12 @@ class ResultViewController: UIViewController {
         closeButtonImageView.userInteractionEnabled = true
         closeButtonImageView.addGestureRecognizer(closeButtonTapReccognizer)
         
+        applyMotionEffect(toView: resultOutlet, magnitude: 10)
+        applyMotionEffect(toView: resultBackgroundImageOutlet, magnitude: -20)
+        applyMotionEffect(toView: shareButtonImageView, magnitude: -20)
+        applyMotionEffect(toView: closeButtonImageView, magnitude: -20)
+        
+        
         
     }
     
@@ -55,6 +61,23 @@ class ResultViewController: UIViewController {
     
     func swipedDown(gesture: UIGestureRecognizer) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func applyMotionEffect(toView view: UIView, magnitude: Float){
+        
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "centre.x", type: .TiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = -magnitude
+        xMotion.maximumRelativeValue = magnitude
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "centre.y", type: .TiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = -magnitude
+        yMotion.maximumRelativeValue = magnitude
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [xMotion, yMotion]
+        
+        view.addMotionEffect(group)
+        
     }
 
     override func didReceiveMemoryWarning() {
