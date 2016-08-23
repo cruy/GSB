@@ -16,15 +16,15 @@ class GSBTableViewCell: UITableViewCell {
     @IBOutlet weak var minusOutlet: UIButton!
     @IBOutlet weak var plusOutlet: UIButton!
     let quantityMin = 0
-    let quantityMax = 100
+    let quantityMax = 99
     let helperMethods = HelperMethods()
+    
     
     
     @IBAction func quantityAction(sender: AnyObject) {
         let button = sender as! UIButton
         let buttonRow = button.tag
         
-        func singleTap() {
             if sender.currentTitle == "+" {
                 let newValue = bands[buttonRow].quantity + 1
                 if newValue <= quantityMax {
@@ -37,21 +37,17 @@ class GSBTableViewCell: UITableViewCell {
                     quantityCounterLabel.text = "\(newValue)"
                     bands[buttonRow].quantity = newValue
                 }
-            }
+            
             ViewController().tableView.reloadData()
             helperMethods.popAnimateProperty(quantityCounterLabel)
-        }
-        
-        singleTap()
         
     }
     
-    
+        }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-       
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -16,7 +16,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var closeButtonImageView: UIImageView!
     
     var result: Double = 0.0
-    
+    var helperMethods = HelperMethods()
     
     
     override func viewDidLoad() {
@@ -78,6 +78,11 @@ class ResultViewController: UIViewController {
         
         view.addMotionEffect(group)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        helperMethods.popAnimateProperty(resultOutlet)
     }
 
     override func didReceiveMemoryWarning() {

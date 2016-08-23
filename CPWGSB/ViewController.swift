@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     
     var helperMethods = HelperMethods()
     var totalGSB: Double = 0
+    var gsbTableViewCell = GSBTableViewCell()
     
 
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ class ViewController: UITableViewController {
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
         }
+        
         self.tableView.reloadData()
     }
     
