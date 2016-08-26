@@ -37,13 +37,13 @@ class GSBTableViewCell: UITableViewCell {
                     quantityCounterLabel.text = "\(newValue)"
                     bands[buttonRow].quantity = newValue
                 }
-            
+            }
             ViewController().tableView.reloadData()
             helperMethods.popAnimateProperty(quantityCounterLabel)
         
-    }
+        
     
-        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

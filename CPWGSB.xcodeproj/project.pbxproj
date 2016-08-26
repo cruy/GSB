@@ -134,8 +134,8 @@
 		DF11F14F1D6875E400BA2616 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DFA42EF81D568300003E3EC2 /* AppDelegate.swift */,
 				DFA42EFA1D568301003E3EC2 /* ViewController.swift */,
+				DFA42EF81D568300003E3EC2 /* AppDelegate.swift */,
 				DFA42F2E1D580026003E3EC2 /* ResultViewController.swift */,
 				DFA42F2B1D5736C6003E3EC2 /* GSBTableViewCell.swift */,
 			);
