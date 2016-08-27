@@ -130,6 +130,7 @@
 				DFA42F291D5683F3003E3EC2 /* GSB.swift */,
 				DF86028C1D72180500D28B79 /* Color.swift */,
 				DF11F14D1D67405A00BA2616 /* HelperMethods.swift */,
+				DF11F1501D687BD300BA2616 /* View */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -180,7 +181,6 @@
 			children = (
 				DF11F14F1D6875E400BA2616 /* Controller */,
 				DF11F14C1D67402700BA2616 /* Model */,
-				DF11F1501D687BD300BA2616 /* View */,
 				DFA42F021D568301003E3EC2 /* Assets.xcassets */,
 				DFA42F041D568301003E3EC2 /* LaunchScreen.storyboard */,
 				DFA42F071D568301003E3EC2 /* Info.plist */,

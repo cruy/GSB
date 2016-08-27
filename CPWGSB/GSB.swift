@@ -8,28 +8,30 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class GSB {
     var band: String
     var reward: Double
-    var quantity: Int = 0
+    var quantity: Int
     
-    init(band: String, reward: Double) {
+    init(band: String, reward: Double, quantity: Int) {
         self.band = band
         self.reward = reward
+        self.quantity = quantity
     }
 }
 
-let bands: [GSB] = [
-    GSB(band: "A", reward: 0.25),
-    GSB(band: "B", reward: 0.75),
-    GSB(band: "C", reward: 1.25),
-    GSB(band: "D", reward: 2.50),
-    GSB(band: "E", reward: 3.50),
-    GSB(band: "F", reward: 4.50),
-    GSB(band: "G", reward: 6.00),
-    GSB(band: "X", reward: 7.00),
-    GSB(band: "XL", reward: 10.00)
+var bands: [GSB] = [
+    GSB(band: "A", reward: 0.25, quantity: 0),
+    GSB(band: "B", reward: 0.75, quantity: 0),
+    GSB(band: "C", reward: 1.25, quantity: 0),
+    GSB(band: "D", reward: 2.50, quantity: 0),
+    GSB(band: "E", reward: 3.50, quantity: 0),
+    GSB(band: "F", reward: 4.50, quantity: 0),
+    GSB(band: "G", reward: 6.00, quantity: 0),
+    GSB(band: "X", reward: 7.00, quantity: 0),
+    GSB(band: "XL", reward: 10.00, quantity: 0)
 ]
 
 
