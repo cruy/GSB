@@ -12,8 +12,6 @@ import UIKit
 class ViewController: UITableViewController {
     
     var helperMethods = HelperMethods()
-    var totalGSB: Double = 0
-    var gsbTableViewCell = GSBTableViewCell()
     
 
     override func viewDidLoad() {
@@ -43,12 +41,12 @@ class ViewController: UITableViewController {
         
         cell.selectionStyle = .None
         cell.bandLabel.text = "Band \(bands[indexPath.row].band)"
-        cell.bandLabel.textColor = helperMethods.colorWithHexString(bands[indexPath.row].fontColorHex)
+        cell.bandLabel.textColor = helperMethods.colorWithHexString(colors[indexPath.row].fontColorHex)
         cell.quantityCounterLabel.text = "\(bands[indexPath.row].quantity)"
-        cell.quantityCounterLabel.textColor = helperMethods.colorWithHexString(bands[indexPath.row].fontColorHex)
+        cell.quantityCounterLabel.textColor = helperMethods.colorWithHexString(colors[indexPath.row].fontColorHex)
         cell.minusOutlet.tag = indexPath.row
         cell.plusOutlet.tag = indexPath.row
-        cell.backgroundColor = helperMethods.colorWithHexString(bands[indexPath.row].colorHex)
+        cell.backgroundColor = helperMethods.colorWithHexString(colors[indexPath.row].colorHex)
         
         return cell
     }
@@ -57,7 +55,7 @@ class ViewController: UITableViewController {
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
         }
-        
+//        helperMethods.popAnimateProperty()
         self.tableView.reloadData()
     }
     
