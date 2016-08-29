@@ -6,9 +6,10 @@
 //  Copyright © 2016 Spitzer IT. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import UIKit
 import pop
+import CoreData
 
 class HelperMethods {
     
@@ -44,4 +45,22 @@ class HelperMethods {
         property.pop_addAnimation(springAnimation, forKey: "springAnimation")
     }
     
+    func deleteDataFromEntity(entity: String) {
+        // fetch all items in entity and request to delete them
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        // delegate objects
+        let myManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let myPersistentStoreCoordinator = (UIApplication.sharedApplication().delegate as! AppDelegate).persistentStoreCoordinator
+        
+        // perform the delete
+        do {
+            try myPersistentStoreCoordinator.executeRequest(deleteRequest, withContext: myManagedObjectContext)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+
+
 }

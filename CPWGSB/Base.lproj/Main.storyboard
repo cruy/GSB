@@ -116,7 +116,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Calculate" id="HJK-we-Fop">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="calculateAction:" destination="0Fd-TO-rrM" id="byK-bz-ctq"/>
                                 <segue destination="o7N-WW-WAp" kind="presentation" identifier="resultSegue" id="FW0-k1-HWP"/>
                             </connections>
                         </barButtonItem>
@@ -170,6 +169,15 @@
                                     <constraint firstAttribute="height" constant="44" id="goy-2r-96w"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£1.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-bN-CtJ">
+                                <rect key="frame" x="20" y="252" width="560" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="Cfm-w2-zfd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeButton" translatesAutoresizingMaskIntoConstraints="NO" id="IAf-QQ-jmb">
                                 <rect key="frame" x="10" y="30" width="44" height="44"/>
                                 <constraints>
@@ -182,15 +190,6 @@
                                 <rect key="frame" x="534" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£1.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-bN-CtJ">
-                                <rect key="frame" x="20" y="252" width="560" height="96"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="Cfm-w2-zfd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.1019607843" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

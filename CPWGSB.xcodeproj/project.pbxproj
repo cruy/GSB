@@ -10,6 +10,8 @@
 		589E88F210B9E070A8D72925 /* Pods_CPWGSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C4B57173C250ADB38B9C69 /* Pods_CPWGSB.framework */; };
 		DF11F14E1D67405A00BA2616 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11F14D1D67405A00BA2616 /* HelperMethods.swift */; };
 		DF86028D1D72180500D28B79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86028C1D72180500D28B79 /* Color.swift */; };
+		DF8602981D72E44700D28B79 /* GSBCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8602961D72E44700D28B79 /* GSBCoreData+CoreDataProperties.swift */; };
+		DF8602991D72E44700D28B79 /* GSBCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8602971D72E44700D28B79 /* GSBCoreData.swift */; };
 		DFA42EF91D568300003E3EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42EF81D568300003E3EC2 /* AppDelegate.swift */; };
 		DFA42EFB1D568301003E3EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA42EFA1D568301003E3EC2 /* ViewController.swift */; };
 		DFA42EFE1D568301003E3EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA42EFC1D568301003E3EC2 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		D7034BCFC2BD4DFDCC5D1FAD /* Pods-CPWGSBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPWGSBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPWGSBTests/Pods-CPWGSBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF11F14D1D67405A00BA2616 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		DF86028C1D72180500D28B79 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DF8602961D72E44700D28B79 /* GSBCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GSBCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DF8602971D72E44700D28B79 /* GSBCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSBCoreData.swift; sourceTree = "<group>"; };
 		DFA42EF51D568300003E3EC2 /* CPWGSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPWGSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA42EF81D568300003E3EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFA42EFA1D568301003E3EC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +134,6 @@
 				DFA42F291D5683F3003E3EC2 /* GSB.swift */,
 				DF86028C1D72180500D28B79 /* Color.swift */,
 				DF11F14D1D67405A00BA2616 /* HelperMethods.swift */,
-				DF11F1501D687BD300BA2616 /* View */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,7 +182,10 @@
 		DFA42EF71D568300003E3EC2 /* CPWGSB */ = {
 			isa = PBXGroup;
 			children = (
+				DF8602961D72E44700D28B79 /* GSBCoreData+CoreDataProperties.swift */,
+				DF8602971D72E44700D28B79 /* GSBCoreData.swift */,
 				DF11F14F1D6875E400BA2616 /* Controller */,
+				DF11F1501D687BD300BA2616 /* View */,
 				DF11F14C1D67402700BA2616 /* Model */,
 				DFA42F021D568301003E3EC2 /* Assets.xcassets */,
 				DFA42F041D568301003E3EC2 /* LaunchScreen.storyboard */,
@@ -472,6 +478,8 @@
 			files = (
 				DFA42F2A1D5683F3003E3EC2 /* GSB.swift in Sources */,
 				DFA42EFB1D568301003E3EC2 /* ViewController.swift in Sources */,
+				DF8602981D72E44700D28B79 /* GSBCoreData+CoreDataProperties.swift in Sources */,
+				DF8602991D72E44700D28B79 /* GSBCoreData.swift in Sources */,
 				DFA42F2C1D5736C6003E3EC2 /* GSBTableViewCell.swift in Sources */,
 				DF11F14E1D67405A00BA2616 /* HelperMethods.swift in Sources */,
 				DFA42F011D568301003E3EC2 /* CPWGSB.xcdatamodeld in Sources */,

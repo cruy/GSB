@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import CoreData
 
 class ViewController: UITableViewController {
     
-    var helperMethods = HelperMethods()
+    let helperMethods = HelperMethods()
+    var listItems = [NSManagedObject]()
+    
     
 
     override func viewDidLoad() {
@@ -20,6 +22,14 @@ class ViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         tableView.separatorStyle = .None
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        fetch()
+        
+                
     }
     
 
@@ -55,12 +65,9 @@ class ViewController: UITableViewController {
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
         }
-//        helperMethods.popAnimateProperty()
+        helperMethods.deleteDataFromEntity("GSBCoreData")
         self.tableView.reloadData()
     }
-    
-    @IBAction func calculateAction(sender: UIBarButtonItem) {
-            }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "resultSegue" {
@@ -77,7 +84,73 @@ class ViewController: UITableViewController {
         }
     }
     
+    // MARK: - Core Data save
     
+    func save(itemsToSave: [GSB]) {
+        
+        helperMethods.deleteDataFromEntity("GSBCoreData")
+        
+        let myManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("GSBCoreData", inManagedObjectContext: myManagedObjectContext)
+        
+        for itemToSave in itemsToSave {
+            
+            let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: myManagedObjectContext)
+            
+            item.setValue(itemToSave.band, forKey: "band")
+            item.setValue(itemToSave.quantity, forKey: "quantity")
+            item.setValue(itemToSave.id, forKey: "id")
+            
+            listItems.append(item)
+        } // end of for in loop
+        
+        do {
+            try myManagedObjectContext.save()
+        } catch {
+            print("error couldn't save core data context")
+        }
+        
+        print("saved...")
+
+        
+        
+    } // end of save method
+    
+    func fetch() {
+        
+      let myManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "GSBCoreData")
+        
+        do {
+
+            let results = try myManagedObjectContext.executeFetchRequest(request) as! [NSManagedObject]
+            
+            for result in results {
+                let quantity = result.valueForKey("quantity") as! Int
+                let id = result.valueForKey("id") as! Int
+                
+                for index in 0..<bands.count {
+                    if bands[index].id == id {
+                        bands[index].quantity = quantity
+                    }
+                }
+                    
+                }
+          
+        } catch {
+            print("there was a fetch error")
+        }
+        
+        self.tableView.reloadData()
+        
+        print("fetched...")
+        
+    } // end of fetch method
+    
+    
+        
 
 }
 
