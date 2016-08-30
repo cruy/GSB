@@ -61,6 +61,7 @@ class ResultViewController: UIViewController {
     
     func swipedDown(gesture: UIGestureRecognizer) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        ViewController().tableView.reloadData()
     }
     
 //    func applyMotionEffect(toView view: UIView, magnitude: Float){

@@ -15,6 +15,7 @@ class ViewController: UITableViewController {
     var listItems = [NSManagedObject]()
     
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class ViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         fetch()
+        print("fetched withing viewWillAppear method, fetched")
         
                 
     }
@@ -62,15 +64,21 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func resetAction(sender: UIBarButtonItem) {
+//        undoManager?.registerUndoWithTarget(self, selector: #selector(ViewController.undoBands), object: bands)
+        
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
         }
+        
         helperMethods.deleteDataFromEntity("GSBCoreData")
         self.tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "resultSegue" {
+            
+            save(bands)
+            print("saved within prepareForSegue method, saved")
             
             var totalGSB: Double = 0
             for index in 0...bands.count-1 {
@@ -110,8 +118,6 @@ class ViewController: UITableViewController {
         } catch {
             print("error couldn't save core data context")
         }
-        
-        print("saved...")
 
         
         
@@ -145,12 +151,19 @@ class ViewController: UITableViewController {
         
         self.tableView.reloadData()
         
-        print("fetched...")
-        
     } // end of fetch method
     
+//    func undoBands() {
+//        bands = tempBandsForUndo
+//        self.tableView.reloadData()
+//        
+//    }
+//    
+//    
+//    @IBAction func undoAction(sender: AnyObject) {
+//       undoManager!.undo()
+//    }
     
-        
 
 }
 

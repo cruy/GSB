@@ -23,7 +23,7 @@ class GSB {
         self.id = id
     }
 }
-
+var tempBandsForUndo = [GSB]()
 var bands: [GSB] = [
     GSB(band: "A", reward: 0.25, quantity: 0, id: 0),
     GSB(band: "B", reward: 0.75, quantity: 0, id: 1),
@@ -34,8 +34,11 @@ var bands: [GSB] = [
     GSB(band: "G", reward: 6.00, quantity: 0, id: 6),
     GSB(band: "X", reward: 7.00, quantity: 0, id: 7),
     GSB(band: "XL", reward: 10.00, quantity: 0, id: 8)
-]
-
+    ] {
+willSet{
+    tempBandsForUndo = bands
+}
+}
 
 
 
