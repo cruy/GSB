@@ -25,81 +25,44 @@ class ResultViewController: UIViewController {
         let twoDecimals = String(format: "%.2f", result)
         resultOutlet.text = "£\(twoDecimals)"
         
-   //     self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipedDown(_:)))
-        swipeRecognizer.direction = .Down
+        swipeRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeRecognizer)
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ResultViewController.shareTapped(_:)))
-        shareButtonImageView.userInteractionEnabled = true
+        shareButtonImageView.isUserInteractionEnabled = true
         shareButtonImageView.addGestureRecognizer(tapGestureRecognizer)
         
         let closeButtonTapReccognizer = UITapGestureRecognizer(target:self, action:#selector(swipedDown(_:)))
-        closeButtonImageView.userInteractionEnabled = true
+        closeButtonImageView.isUserInteractionEnabled = true
         closeButtonImageView.addGestureRecognizer(closeButtonTapReccognizer)
-        
-//        applyMotionEffect(toView: resultOutlet, magnitude: 10)
-//        applyMotionEffect(toView: resultBackgroundImageOutlet, magnitude: -20)
-//        applyMotionEffect(toView: shareButtonImageView, magnitude: -20)
-//        applyMotionEffect(toView: closeButtonImageView, magnitude: -20)
-        
         
         
     }
     
-    func shareTapped(object: AnyObject) {
+    func shareTapped(_ object: AnyObject) {
         
-        let bounds = UIScreen.mainScreen().bounds
+        let bounds = UIScreen.main.bounds
         UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
-        self.view.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         let activityViewController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
-    func swipedDown(gesture: UIGestureRecognizer) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func swipedDown(_ gesture: UIGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
         ViewController().tableView.reloadData()
     }
     
-//    func applyMotionEffect(toView view: UIView, magnitude: Float){
-//        
-//        let xMotion = UIInterpolatingMotionEffect(keyPath: "centre.x", type: .TiltAlongHorizontalAxis)
-//        xMotion.minimumRelativeValue = -magnitude
-//        xMotion.maximumRelativeValue = magnitude
-//        
-//        let yMotion = UIInterpolatingMotionEffect(keyPath: "centre.y", type: .TiltAlongVerticalAxis)
-//        yMotion.minimumRelativeValue = -magnitude
-//        yMotion.maximumRelativeValue = magnitude
-//        
-//        let group = UIMotionEffectGroup()
-//        group.motionEffects = [xMotion, yMotion]
-//        
-//        view.addMotionEffect(group)
-//        
-//    }
+
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         helperMethods.popAnimateProperty(resultOutlet)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
