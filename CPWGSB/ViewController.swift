@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  CPWGSB
-//
-//  Created by Peter Spitzer on 06/08/2016.
-//  Copyright © 2016 Spitzer IT. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
@@ -16,7 +8,6 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         tableView.separatorStyle = .none
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -26,7 +17,7 @@ class ViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetch()
-        print("fetched withing viewWillAppear method, fetched")
+        print("fetched within viewWillAppear method, fetched")
         
                 
     }
@@ -50,18 +41,17 @@ class ViewController: UITableViewController {
         
         cell.selectionStyle = .none
         cell.bandLabel.text = "Band \(bands[(indexPath as NSIndexPath).row].band)"
-        cell.bandLabel.textColor = helperMethods.colorWithHexString(colors[(indexPath as NSIndexPath).row].fontColorHex)
+        cell.bandLabel.textColor = bands[(indexPath as NSIndexPath).row].cellFontColor
         cell.quantityCounterLabel.text = "\(bands[(indexPath as NSIndexPath).row].quantity)"
-        cell.quantityCounterLabel.textColor = helperMethods.colorWithHexString(colors[(indexPath as NSIndexPath).row].fontColorHex)
+        cell.quantityCounterLabel.textColor = bands[(indexPath as NSIndexPath).row].cellFontColor
         cell.minusOutlet.tag = (indexPath as NSIndexPath).row
         cell.plusOutlet.tag = (indexPath as NSIndexPath).row
-        cell.backgroundColor = helperMethods.colorWithHexString(colors[(indexPath as NSIndexPath).row].colorHex)
+        cell.backgroundColor = bands[(indexPath as NSIndexPath).row].cellBackgroundColor
         
         return cell
     }
     
     @IBAction func resetAction(_ sender: UIBarButtonItem) {
-//        undoManager?.registerUndoWithTarget(self, selector: #selector(ViewController.undoBands), object: bands)
         
         for index in 0...bands.count-1 {
             bands[index].quantity = 0
@@ -89,7 +79,7 @@ class ViewController: UITableViewController {
         }
     }
     
-    // MARK: - Core Data save
+    // MARK: - Core Data
     
     func save(_ itemsToSave: [GSB]) {
         
@@ -105,7 +95,6 @@ class ViewController: UITableViewController {
             
             item.setValue(itemToSave.band, forKey: "band")
             item.setValue(itemToSave.quantity, forKey: "quantity")
-            item.setValue(itemToSave.id, forKey: "id")
             
             listItems.append(item)
         } // end of for in loop
@@ -124,7 +113,7 @@ class ViewController: UITableViewController {
         
       let myManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         
-        let request = NSFetchRequest(entityName: "GSBCoreData")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GSBCoreData")
         
         do {
 
@@ -132,10 +121,10 @@ class ViewController: UITableViewController {
             
             for result in results {
                 let quantity = result.value(forKey: "quantity") as! Int
-                let id = result.value(forKey: "id") as! Int
+                let band = result.value(forKey: "band") as! String
                 
                 for index in 0..<bands.count {
-                    if bands[index].id == id {
+                    if bands[index].band == band {
                         bands[index].quantity = quantity
                     }
                 }

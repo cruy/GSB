@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CPWGSB
-//
-//  Created by Peter Spitzer on 06/08/2016.
-//  Copyright © 2016 Spitzer IT. All rights reserved.
-//
 
 import UIKit
 import CoreData
@@ -17,7 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         UIApplication.shared.statusBarStyle = .lightContent
         return true

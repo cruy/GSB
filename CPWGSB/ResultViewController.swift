@@ -1,10 +1,3 @@
-//
-//  ResultViewController.swift
-//  CPWGSB
-//
-//  Created by Peter Spitzer on 08/08/2016.
-//  Copyright © 2016 Spitzer IT. All rights reserved.
-//
 
 import UIKit
 

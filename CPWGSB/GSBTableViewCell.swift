@@ -1,10 +1,3 @@
-//
-//  GSBTableViewCell.swift
-//  CPWGSB
-//
-//  Created by Peter Spitzer on 07/08/2016.
-//  Copyright © 2016 Spitzer IT. All rights reserved.
-//
 
 import UIKit
 import pop
@@ -23,19 +16,19 @@ class GSBTableViewCell: UITableViewCell {
     
     @IBAction func quantityAction(_ sender: AnyObject) {
         let button = sender as! UIButton
-        let buttonRow = button.tag
+        let indexPathRow = button.tag
         
             if sender.currentTitle == "+" {
-                let newValue = bands[buttonRow].quantity + 1
+                let newValue = bands[indexPathRow].quantity + 1
                 if newValue <= quantityMax {
                     quantityCounterLabel.text = "\(newValue)"
-                    bands[buttonRow].quantity = newValue
+                    bands[indexPathRow].quantity = newValue
                 }
             } else {
-                let newValue = bands[buttonRow].quantity - 1
+                let newValue = bands[indexPathRow].quantity - 1
                 if newValue >= quantityMin {
                     quantityCounterLabel.text = "\(newValue)"
-                    bands[buttonRow].quantity = newValue
+                    bands[indexPathRow].quantity = newValue
                 }
             }
             ViewController().tableView.reloadData()
